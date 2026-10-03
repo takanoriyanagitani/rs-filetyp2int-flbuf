@@ -1,0 +1,31 @@
+[package]
+name = "rs-filetyp2int-flbuf"
+version = "0.1.0"
+edition = "2024"
+
+exclude = [
+]
+
+[profile.release-wasi]
+inherits = "release"
+lto = true
+strip = true
+opt-level = 's'
+codegen-units = 1
+
+[[bin]]
+name = "filetyp2int-flbuf"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+
+[dependencies.flexbuffers]
+version = "25.12.19"
+default-features = false
+features = [
+]
